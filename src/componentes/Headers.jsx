@@ -2,57 +2,32 @@ import { useState } from "react"
 import useProyectoPeliculasProvider from "../hook/useProyectoPeliculasProvider"
 import SwipeReproductor from "./SwipeReproductor"
 import { SwiperSlide } from 'swiper/react';
-import alertCircle from 'react-useanimations/lib/alertCircle'
 
 const Headers = () => {
 
     const { peliculaBuscada, setPeliculaBuscada, peliculasPopulares, handleTrailers, modificarModalTrailers, buscarPelicula } = useProyectoPeliculasProvider()
 
     const [buscador, setBuscador] = useState(false)
-    const [menu, setMenu] = useState(["Populares, Dramas, Infantiles, Tom Cruise"])
-    const [menuActivado, setMenuActivado] = useState(false)
-    const [checked, setChecked] = useState(true);
-
 
     return (
         <header
             className="bg-cover bg-center-top w-full h-[350px] md:h-[700px] lg:h-[500px] xl:h-[700px] 2xl:h-[980px] relative"
         >
-            <nav className='flex justify-around items-center gap-2 md:h-20'>
+            <nav className='flex justify-around items-center gap-3 md:h-20 p-1'>
 
-                <div className="flex text-white items-center">
-                    <img
-                        src="./assets/img/netflix.png"
-                        alt="imagen netflix"
-                        className='w-1/3 md:w-32'
-                    />
+                <img
+                    src="./assets/img/netflix.png"
+                    alt="imagen netflix"
+                    className='w-1/3 md:w-32'
+                />
 
-                    <div
-                        className="flex items-center gap-2 cursor-pointer"
-                        onClick={() => setMenuActivado(!menuActivado)}
-                    >
-
-                        <a href="#" className="ml-10 hover:text-gray-400">Películas</a>
-
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-4 h-4">
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
-                        </svg>
-
-
-                    </div>
-                    {menuActivado ? (
-                        menu.map(enlace => (
-                            <a href="#">{enlace}</a>
-                        ))
-                    ) : ''}
-                </div>
                 <div className='flex items-center justify-end gap-4'>
                     {buscador &&
                         <input
                             id='buscador'
                             type="text"
                             value={peliculaBuscada}
-                            className='bg-gray-300 rounded-sm text-lg w-2/3 p-0.5 gap-2'
+                            className='bg-gray-300 rounded-sm text-md md:text-lg w-2/3 p-0.5 gap-2'
                             onChange={e => { buscarPelicula(e.target.value) }}
                         />
                     }

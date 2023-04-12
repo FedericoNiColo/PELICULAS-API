@@ -9,7 +9,7 @@ const PeliculasBuscadas = () => {
     const { peliculasBuscadas, modificarModalPelicula, handleModalPelicula } = useProyectoPeliculasProvider()
 
     return (
-        <div className="flex flex-wrap m-auto w-5/6 relative top-28">
+        <div className="flex flex-wrap m-auto w-5/6 relative md:top-28 top-8">
 
             {
                 peliculasBuscadas?.map(peli => (
@@ -56,15 +56,15 @@ const PeliculasBuscadas = () => {
                                 )
                             }
                             
-                            <div className='text-sm bg-black/60 rounded-full hover:bg-gray-900 '>
-                                <div className="text-white m-0.5 md:m-1 h-3 w-3 md:h-5 md:w-5 lg:h-8 lg:w-8  hover:text-gray-300 cursor-pointer">
+                            <div className='text-sm h-10 w-10 bg-black/60 rounded-full hover:bg-gray-900 '>
+                                <div className="text-white  h-3 w-3 md:h-5 md:w-5 lg:h-8 lg:w-8 hover:text-gray-300 cursor-pointer">
                                     <p
                                         onClick={() => {
                                             modificarModalPelicula()
                                             handleModalPelicula(`${peli.id}`)
                                         }}
                                         className="cursor-pointer"
-                                    > <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" >
+                                    > <svg className="h-10 w-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
                                             <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                                         </svg>
                                     </p>
