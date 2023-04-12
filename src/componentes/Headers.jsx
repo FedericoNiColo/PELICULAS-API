@@ -5,7 +5,7 @@ import { SwiperSlide } from 'swiper/react';
 
 const Headers = () => {
 
-    const { peliculaBuscada, setPeliculaBuscada, peliculasPopulares, handleTrailers, modificarModalTrailers, buscarPelicula } = useProyectoPeliculasProvider()
+    const { peliculaBuscada, modificarModalPelicula, handleModalPelicula, peliculasPopulares, handleTrailers, modificarModalTrailers, buscarPelicula } = useProyectoPeliculasProvider()
 
     const [buscador, setBuscador] = useState(false)
 
@@ -18,7 +18,7 @@ const Headers = () => {
                 <a className='w-1/3 md:w-32 p-2' href="/"><img
                     src="./assets/img/netflix.png"
                     alt="imagen netflix"
-                    
+
                 /></a>
 
                 <div className='flex items-center justify-end gap-4'>
@@ -49,12 +49,15 @@ const Headers = () => {
                 {
                     peliculasPopulares.map(peli => (
                         <SwiperSlide key={peli.id}>
-                            <div className=" flex justify-center lg:justify-start p-1 gap-2 w-full text-white absolute bottom-2 md:left-5 lg:bottom-12 lg:left-16">
+                            <div className=" flex flex-col justify-center lg:justify-start p-1 gap-2 w-full text-white absolute bottom-2 md:left-5 lg:bottom-12 lg:left-16">
                                 <button
                                     type="button"
-                                    className="flex items-center rounded-md p-0.5 lg:p-2 bg-gray-800 bg-opacity-80 text-md w-1/2 md:w-2/6 lg:w-1/6 md:h-14 h-8 2xl:w-1/12"
+                                    className="flex items-center rounded-md p-0.5 lg:p-2 bg-black/70 hover:bg-white/20 border-2 text-md w-1/2 md:w-2/6 lg:w-1/6 md:h-14 h-8 2xl:w-1/12"
+                                    onClick={() => {
+                                        modificarModalPelicula()
+                                        handleModalPelicula(`${peli.id}`)
+                                    }}
                                 >
-
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="md:h-10 h-6" >
                                         <path strokeLinecap="round" strokeLinejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
                                     </svg>
@@ -63,7 +66,7 @@ const Headers = () => {
 
                                 <button
                                     type="button"
-                                    className="flex items-center gap-1 rounded-md p-0.5 lg:p-2 bg-gray-800 bg-opacity-80 text-md hover:opacity-90 w-1/2 md:w-2/6 lg:w-1/6 md:h-14 h-8 2xl:w-1/12"
+                                    className="flex items-center gap-1 rounded-md p-0.5 lg:p-2 bg-black/70 hover:bg-white/20 border-2 text-md hover:opacity-90 w-1/2 md:w-2/6 lg:w-1/6 md:h-14 h-8 2xl:w-1/12"
                                     onClick={() => {
                                         modificarModalTrailers()
                                         handleTrailers(`${peli.id}`)
