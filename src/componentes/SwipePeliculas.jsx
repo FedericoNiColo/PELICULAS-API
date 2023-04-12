@@ -20,7 +20,7 @@ const SwipePeliculas = ({ children }) => {
         <>
 
             <Swiper
-                slidesPerView={7}
+                slidesPerView={6}
                 spaceBetween={5}
                 freeMode={true}
                 navigation={true}

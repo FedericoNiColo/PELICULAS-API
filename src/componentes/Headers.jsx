@@ -15,11 +15,11 @@ const Headers = () => {
         >
             <nav className='flex justify-around items-center gap-3 md:h-20 p-1'>
 
-                <img
+                <a className='w-1/3 md:w-32 p-2' href="/"><img
                     src="./assets/img/netflix.png"
                     alt="imagen netflix"
-                    className='w-1/3 md:w-32'
-                />
+                    
+                /></a>
 
                 <div className='flex items-center justify-end gap-4'>
                     {buscador &&
