@@ -15,7 +15,7 @@ const PeliculasPopulares = () => {
 
     return (
 
-        <section className=" md:mt-20 lg:mt-14 p-2 lg:p-10 text-lg md:text-2xl xl:text-4xl ">
+        <section className="mt-5 md:mt-20 lg:mt-14 p-2 lg:p-10 text-lg md:text-2xl xl:text-4xl ">
             <div>
                 <div>
                     <h2 className="text-white mb-2 md:mb-5">Más Populares</h2>
