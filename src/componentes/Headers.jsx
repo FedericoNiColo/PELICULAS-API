@@ -52,7 +52,7 @@ const Headers = () => {
                             <div className=" flex flex-col justify-center lg:justify-start p-1 gap-2 w-full text-white absolute bottom-2 md:left-5 lg:bottom-12 lg:left-16">
                                 <button
                                     type="button"
-                                    className="flex items-center rounded-md p-0.5 lg:p-2 bg-black/70 hover:bg-white/20 border-2 text-md w-1/2 md:w-2/6 lg:w-1/6 md:h-14 h-8 2xl:w-1/12"
+                                    className="flex items-center rounded-md p-0.5 lg:p-2 bg-black/70 hover:bg-white/20  text-md w-1/2 md:w-2/6 lg:w-1/6 md:h-14 h-8 2xl:w-1/12"
                                     onClick={() => {
                                         modificarModalPelicula()
                                         handleModalPelicula(`${peli.id}`)
@@ -66,7 +66,7 @@ const Headers = () => {
 
                                 <button
                                     type="button"
-                                    className="flex items-center gap-1 rounded-md p-0.5 lg:p-2 bg-black/70 hover:bg-white/20 border-2 text-md hover:opacity-90 w-1/2 md:w-2/6 lg:w-1/6 md:h-14 h-8 2xl:w-1/12"
+                                    className="flex items-center gap-1 rounded-md p-0.5 lg:p-2 bg-black/70 hover:bg-white/20  text-md hover:opacity-90 w-1/2 md:w-2/6 lg:w-1/6 md:h-14 h-8 2xl:w-1/12"
                                     onClick={() => {
                                         modificarModalTrailers()
                                         handleTrailers(`${peli.id}`)
